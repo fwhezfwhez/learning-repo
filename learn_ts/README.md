@@ -116,3 +116,32 @@ dog.Speak()
 console.log(dog.name)
 console.log(dog.ID())
 ```
+
+#### 5. namespace and module
+`/export.ts`
+
+`/import.ts`
+
+- 命名空间可以区分同名变量
+- 每一个文件，都是一个module
+- 不管是module还是namespace，都需要export才能被外文件调用，外文件调用前，须import
+
+**export.ts**
+```typescript
+export var name: string = "kill"
+
+export namespace Area1 {
+    export var name: string = "area1 name"
+}
+export namespace Area2 {
+    export var name: string = "area2 name"
+}
+```
+
+**import.ts**
+```typescript
+import { name,Area1, Area2 } from "./export";
+console.log(name)
+console.log(Area1.name)
+console.log(Area2.name)
+```
